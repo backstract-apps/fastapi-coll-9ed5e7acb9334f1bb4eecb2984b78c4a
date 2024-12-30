@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-coll-9ed5e7acb9334f1bb4eecb2984b78c4a-depl
+  labels:
+    app: fastapi-coll-9ed5e7acb9334f1bb4eecb2984b78c4a
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fastapi-coll-9ed5e7acb9334f1bb4eecb2984b78c4a
+  template:
+    metadata:
+      labels:
+        app: fastapi-coll-9ed5e7acb9334f1bb4eecb2984b78c4a
+    spec:
+      containers:
+        - name: fastapi-coll-9ed5e7acb9334f1bb4eecb2984b78c4a
+          image: 216084506783.dkr.ecr.ap-south-1.amazonaws.com/backstract_apps:fastapi-coll-9ed5e7acb9334f1bb4eecb2984b78c4a
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9045
